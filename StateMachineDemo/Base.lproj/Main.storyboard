@@ -1,25 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F6a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aJt-Yb-8gU">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rocket-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-yH-TJw">
+                                <rect key="frame" x="82" y="300" width="157" height="268"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-0p-otf">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="268"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYl-bW-vzg">
+                                        <rect key="frame" x="28" y="234" width="46" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="joW-d8-ZgU"/>
+                                        </constraints>
+                                        <state key="normal" title="Fire"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fire:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Gv-VR-Zzx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-gV-eHc">
+                                        <rect key="frame" x="82" y="234" width="46" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="3ne-cU-Bdx"/>
+                                        </constraints>
+                                        <state key="normal" title="Abort"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="abort:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iwj-0b-JQC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Standby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bk-dm-c79">
+                                        <rect key="frame" x="35" y="175" width="93" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cNE-0p-otf" secondAttribute="bottom" id="Foq-H2-Vjj"/>
+                                    <constraint firstItem="cNE-0p-otf" firstAttribute="leading" secondItem="hmg-yH-TJw" secondAttribute="leading" id="IAM-dE-vLt"/>
+                                    <constraint firstItem="ZYl-bW-vzg" firstAttribute="width" secondItem="5cb-gV-eHc" secondAttribute="width" id="KnC-YJ-9Yw"/>
+                                    <constraint firstAttribute="bottom" secondItem="5cb-gV-eHc" secondAttribute="bottom" id="LpZ-bi-pFm"/>
+                                    <constraint firstAttribute="height" constant="268" id="Miq-5h-GSF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZYl-bW-vzg" secondAttribute="bottom" id="QWy-SK-ouY"/>
+                                    <constraint firstAttribute="trailing" secondItem="5cb-gV-eHc" secondAttribute="trailing" constant="29" id="YOE-Eb-phv"/>
+                                    <constraint firstItem="cNE-0p-otf" firstAttribute="top" secondItem="hmg-yH-TJw" secondAttribute="top" id="dA4-qT-cm4"/>
+                                    <constraint firstItem="5cb-gV-eHc" firstAttribute="leading" secondItem="ZYl-bW-vzg" secondAttribute="trailing" constant="8" id="fuX-ub-UuY"/>
+                                    <constraint firstAttribute="width" constant="157" id="jVk-96-nnS"/>
+                                    <constraint firstAttribute="trailing" secondItem="cNE-0p-otf" secondAttribute="trailing" id="mPy-PA-FC9"/>
+                                    <constraint firstAttribute="width" secondItem="hmg-yH-TJw" secondAttribute="height" multiplier="157:268" id="oSv-Xd-kIQ"/>
+                                    <constraint firstItem="ZYl-bW-vzg" firstAttribute="leading" secondItem="hmg-yH-TJw" secondAttribute="leading" constant="28" id="zCC-lF-msT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hmg-yH-TJw" secondAttribute="centerX" constant="-0.5" id="2YY-On-ASM"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="hmg-yH-TJw" secondAttribute="bottom" id="q0u-CH-b0j"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Rocket" id="RMW-G9-FGf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ebJ-RO-s3m">
+                            <connections>
+                                <action selector="refresh:" destination="vXZ-lx-hvc" id="ZFf-hT-cRT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="abortBtn" destination="5cb-gV-eHc" id="Qh0-tf-g0L"/>
+                        <outlet property="countDownLbl" destination="6Bk-dm-c79" id="a9N-gM-eax"/>
+                        <outlet property="fireBtn" destination="ZYl-bW-vzg" id="RK8-ou-kDY"/>
+                        <outlet property="rocketView" destination="hmg-yH-TJw" id="aCv-oG-muq"/>
+                        <outlet property="rocketViewButtomSpaceConstraint" destination="q0u-CH-b0j" id="oFa-UG-wn8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="652" y="377.71999999999997"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UD9-nr-1Ou">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aJt-Yb-8gU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="10K-xA-ZVz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="i4k-kw-UMh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kye-EN-tY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162.40000000000001" y="377.71999999999997"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rocket.jpg" width="250" height="428"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
